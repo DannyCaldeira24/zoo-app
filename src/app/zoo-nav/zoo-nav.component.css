@@ -9,6 +9,7 @@
 
 .mat-toolbar.mat-primary {
   position: sticky;
+  z-index: 10;
   top: 0;
 }
 
@@ -22,6 +23,10 @@
 	}
 }
 
+.log{
+	margin-right:25px;
+}
+
 .spacer{
 	flex: 1 1 auto;
 }
@@ -29,6 +34,7 @@
 mat-toolbar a{
 	display: inline-block;
 	margin: 0 10px;
+	font-size:18px;
 	color:white;
 	text-decoration: none;
 }
@@ -51,3 +57,4 @@ mat-toolbar a{
 	color:white;
 	border-bottom:2px solid yellow;
 }
+

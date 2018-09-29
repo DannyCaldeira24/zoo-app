@@ -25,13 +25,15 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>zoo-app</span>
+      <span class="log">zoo-app</span>
+      <a [routerLink]="['/home']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">home</mat-icon>&nbsp;Inicio</a>
+      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">room</mat-icon>&nbsp;Animales</a>
+      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">security</mat-icon>&nbsp;Cuidadores</a>
+      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">shop</mat-icon>&nbsp;Tienda</a>
+      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon>&nbsp;Contacto</a>
       <span class="spacer"></span>
-      <a [routerLink]="['/home']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">home</mat-icon>Inicio</a>
-      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">room</mat-icon>Animales</a>
-      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">security</mat-icon>Cuidadores</a>
-      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">shop</mat-icon>Tienda</a>
-      <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon>Contacto</a>
+      <a [routerLink]="['/login']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>&nbsp;Login</a>
+      <a [routerLink]="['/register']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">how_to_reg</mat-icon>&nbsp;Register</a>
     </mat-toolbar>
     <ng-content></ng-content>
     <!-- Add Content Here -->
