@@ -1,3 +1,43 @@
-<p>
-  login works!
-</p>
+<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 content-box-blue">	
+	<h1 style="margin-bottom:20px;">{{title}}</h1>
+	<div class="alert alert-danger" *ngIf="error">
+		{{message}}
+	</div>
+	<form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit(loginForm)">	
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		  	<mat-label>Email</mat-label>
+		    <input matInput name="email" #email="ngModel" [(ngModel)]="user.email" placeholder="Email" required email/>
+		    <mat-icon matSuffix>email</mat-icon>
+		    <mat-hint>El correo es requerido y debe tener un formato correcto</mat-hint>
+		    <mat-error *ngIf="email.invalid">
+			    <mat-error *ngIf="email.errors.required">
+			      El correo no puede quedar vacio
+			    </mat-error>
+			    <mat-error *ngIf="email.errors.email">
+			      Este correo no es valido
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		  	<mat-label>Password</mat-label>
+		    <input matInput placeholder="Ingrese su contraseña" name="password" #password="ngModel" [(ngModel)]="user.password" [type]="hide ? 'password' : 'text'" required minlength="8"/>
+		    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+		    <mat-hint>Debe contener al menos 8 caracteres</mat-hint>
+		    <mat-error *ngIf="password.invalid">
+			    <mat-error *ngIf="password.errors.required">
+			      La contraseña no puede quedar vacio
+			    </mat-error>
+			    <mat-error *ngIf="password.errors.minlength">
+			      La contraseña debe tener al menos 8 caracteres
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div class="col-lg-12" style="text-align:center">
+			<input type="submit" value="Iniciar sesión" class="btn btn-success" [disabled]="!loginForm.form.valid">&nbsp;&nbsp;	
+		</div>
+	</form>
+</div>	

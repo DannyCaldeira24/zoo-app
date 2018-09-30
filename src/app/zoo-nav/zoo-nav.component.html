@@ -32,8 +32,20 @@
       <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">shop</mat-icon>&nbsp;Tienda</a>
       <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon>&nbsp;Contacto</a>
       <span class="spacer"></span>
-      <a [routerLink]="['/login']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>&nbsp;Login</a>
-      <a [routerLink]="['/register']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">how_to_reg</mat-icon>&nbsp;Register</a>
+      <a *ngIf="!session" [routerLink]="['/login']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>&nbsp;Login</a>
+      <a *ngIf="!session" [routerLink]="['/register']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">how_to_reg</mat-icon>&nbsp;Register</a>
+      <mat-form-field *ngIf="session" style="font-size:15px">
+        <mat-select placeholder="{{session.name}} {{session.surname}}">
+          <mat-option *ngFor="let option of options" [value]="option.value">
+            <a *ngIf="option.value == 'logout-1'" (click)="logout()">
+              <mat-icon aria-label="Side nav toggle icon">exit_to_app</mat-icon>{{option.viewValue}}
+            </a>
+            <a *ngIf="option.value == 'perfil-0'" (click)="logout()">
+              <mat-icon  aria-label="Side nav toggle icon">menu</mat-icon>{{option.viewValue}}
+            </a>   
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </mat-toolbar>
     <ng-content></ng-content>
     <!-- Add Content Here -->
