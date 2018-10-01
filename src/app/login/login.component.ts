@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
 			response=>{
 				if(response.user && response.user._id){
 					this.session = response.user;
-					this.session.password = '';
 					localStorage.setItem('session',JSON.stringify(this.session));
 					//console.log(this.session);
 					//Conseguir el token
@@ -81,3 +80,4 @@ export class LoginComponent implements OnInit {
 			}
 		);
 	}
+}	

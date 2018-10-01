@@ -5,13 +5,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { ZooNavComponent } from './zoo-nav/zoo-nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { RecoveryComponent } from './recovery/recovery.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const appRoutes: Routes = [
 	 {path:'', component:HomeComponent},
 	 {path: 'home', component: HomeComponent},
 	 {path: 'login', component: LoginComponent},
 	 {path: 'register', component: RegisterComponent},
+	 {path: 'recovery', component: RecoveryComponent},
+	 {path: 'edit', component: UserEditComponent},
+	 {path: 'perfil', component: PerfilComponent},
 	 {path: '**', component:HomeComponent}
 ];
 

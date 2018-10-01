@@ -4,6 +4,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {UserService} from '../services/user.service';
+import {GLOBAL} from '../services/global';
 
 export interface option {
   value: string;
@@ -18,9 +19,12 @@ export interface option {
 })
 export class ZooNavComponent implements OnInit{
 	public session;
+  public user;
+  public url;
 	options: option[] = [
     	{value: 'perfil-0', viewValue: 'Perfil'},
-    	{value: 'logout-1', viewValue: 'Cerrar sesión'}
+      {value: 'datos-1', viewValue: 'Modificar datos'},
+      {value: 'logout-2', viewValue: 'Cerrar sesión'}
 	];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -32,7 +36,7 @@ export class ZooNavComponent implements OnInit{
     private _route: ActivatedRoute,
     private _router: Router,
 		private _userService:UserService
-	){}
+	){this.url=GLOBAL.url;}
 
 	ngOnInit(){
 		this.session=this._userService.getSession();

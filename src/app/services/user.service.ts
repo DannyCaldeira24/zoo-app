@@ -34,6 +34,17 @@ export class UserService{
 		return this._http.post(this.url+'/login',params,{headers:headers}).pipe(map(res => res.json()));
 
 	}
+	edit(user){
+		let params = JSON.stringify(user);
+		let headers = new Headers({'Content-Type':'application/json','Authorization': this.getToken()});
+
+		return this._http.put(this.url+'/update-user/'+user._id, params,{headers:headers}).pipe(map(res => res.json()));
+
+	}
+
+	recovery(correo){
+		
+	}
 
 	getSession(){
 		let session = JSON.parse(localStorage.getItem('session'));

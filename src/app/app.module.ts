@@ -18,6 +18,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RecoveryComponent } from './recovery/recovery.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { RegisterComponent } from './register/register.component';
     ZooNavComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecoveryComponent,
+    UserEditComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

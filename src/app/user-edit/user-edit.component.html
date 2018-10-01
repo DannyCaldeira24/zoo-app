@@ -1,0 +1,87 @@
+<div class="col-lg-6 offset-lg-3 content-box-blue">	
+	<h1 style="margin-bottom:20px;">{{title}}</h1>
+	<div class="alert alert-success" *ngIf="success">
+		Usted actualizo sus datos correctamente.
+	</div>
+	<div class="alert alert-danger" *ngIf="error">
+		Ha ocurrido un error, no se logro actualizar sus datos.
+	</div>
+	<form #editForm="ngForm" (ngSubmit)="editForm.form.valid && onSubmit()">
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		    <mat-label>Nombre</mat-label>
+		    <input matInput name="name" #name="ngModel" [(ngModel)]="user.name" placeholder="Ingrese su nombre completo" required minlength="3"/>
+		    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+		    <mat-hint>Este campo es requerido</mat-hint>
+		    <mat-error *ngIf="name.invalid">
+			    <mat-error *ngIf="name.errors.required">
+			      El nombre no puede quedar vacio
+			    </mat-error>
+			    <mat-error *ngIf="name.errors.minlength">
+			      El nombre debe tener al menos 3 caracteres
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		    <mat-label>Apellido</mat-label>
+		    <input matInput name="surname" #surname="ngModel" [(ngModel)]="user.surname" placeholder="Ingrese su apellido" required minlength="3"/>
+		    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+		    <mat-hint>Este campo es requerido</mat-hint>
+		    <mat-error *ngIf="surname.invalid">
+			    <mat-error *ngIf="surname.errors.required">
+			      El apellido no puede quedar vacio
+			    </mat-error>
+			    <mat-error *ngIf="surname.errors.minlength">
+			      El apellido debe tener al menos 3 caracteres
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>	
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		  	<mat-label>Email</mat-label>
+		    <input matInput name="email" #email="ngModel" [(ngModel)]="user.email" placeholder="Email" required email/>
+		    <mat-icon matSuffix>email</mat-icon>
+		    <mat-hint>El correo es requerido y debe tener un formato correcto</mat-hint>
+		    <mat-error *ngIf="email.invalid">
+			    <mat-error *ngIf="email.errors.required">
+			      El correo no puede quedar vacio
+			    </mat-error>
+			    <mat-error *ngIf="email.errors.email">
+			      Este correo no es valido
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div style="margin-bottom:15px;margin-top:15px;" class="col-lg-10 offset-lg-1">
+			<small>Si desea también puede actualizar su avatar:</small>
+			<div class="row">
+				<div class="custom-file col-lg-6" id="customFile" lang="es">
+			        <input type="file" class="custom-file-input" id="imageUser" aria-describedby="fileHelp" (change)="fileChangeEvent($event)">
+			        <label class="custom-file-label" for="imageUser">
+			           <span *ngIf="filesToUpload">
+			           	{{filesToUpload.name}}	
+			           </span>
+			           <span *ngIf="user.image && !filesToUpload">
+			           	{{user.image}}	
+			           </span>
+			           <span *ngIf="!user.image && !filesToUpload">
+			           	Eliga una imagen de su equipo	
+			           </span>
+			        </label>
+				</div>
+				<div style="margin-bottom:15px;text-align: center" class="col-lg-6">
+					<img style="border-radius: 50%;height: 130px;width: 130px;" src="{{url+'/get-image/'+user.image}}" alt="">
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="col-lg-12" style="text-align:center">
+			<input type="submit" value="Aceptar" class="btn btn-success" [disabled]="!editForm.form.valid">&nbsp;&nbsp;
+			<a [routerLink]="['/home']"><button mat-raised-button color="warn">Cancelar</button></a>	
+		</div>
+	</form>
+</div>	
+

@@ -34,16 +34,27 @@
       <span class="spacer"></span>
       <a *ngIf="!session" [routerLink]="['/login']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>&nbsp;Login</a>
       <a *ngIf="!session" [routerLink]="['/register']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">how_to_reg</mat-icon>&nbsp;Register</a>
+      <img *ngIf="session" style="border-radius: 50%;height: 40px;width: 40px;" src="{{url+'/get-image/'+session.image}}" alt="">&nbsp;&nbsp;
       <mat-form-field *ngIf="session" style="font-size:15px">
         <mat-select placeholder="{{session.name}} {{session.surname}}">
-          <mat-option *ngFor="let option of options" [value]="option.value">
-            <a *ngIf="option.value == 'logout-1'" (click)="logout()">
-              <mat-icon aria-label="Side nav toggle icon">exit_to_app</mat-icon>{{option.viewValue}}
+          <mat-option><img style="border-radius: 50%;height: 30px;width: 30px;" src="{{url+'/get-image/'+session.image}}" alt="">&nbsp; {{session.email}}</mat-option>
+          <div *ngFor="let option of options">
+            <a class="option" *ngIf="option.value == 'perfil-0'" [routerLink]="['/perfil']">
+              <mat-option>
+                <mat-icon  aria-label="Side nav toggle icon">face</mat-icon>{{option.viewValue}}
+              </mat-option>  
             </a>
-            <a *ngIf="option.value == 'perfil-0'" (click)="logout()">
-              <mat-icon  aria-label="Side nav toggle icon">menu</mat-icon>{{option.viewValue}}
-            </a>   
-          </mat-option>
+            <a class="option" *ngIf="option.value == 'datos-1'" [routerLink]="['/edit']">
+              <mat-option>
+                <mat-icon  aria-label="Side nav toggle icon">settings</mat-icon>{{option.viewValue}}
+              </mat-option>
+            </a>
+            <a *ngIf="option.value == 'logout-2'" (click)="logout()">
+              <mat-option>
+                <mat-icon aria-label="Side nav toggle icon">exit_to_app</mat-icon>{{option.viewValue}}
+              </mat-option>
+            </a>    
+          </div>
         </mat-select>
       </mat-form-field>
     </mat-toolbar>
