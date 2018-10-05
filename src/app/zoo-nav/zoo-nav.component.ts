@@ -19,11 +19,11 @@ export interface option {
 })
 export class ZooNavComponent implements OnInit{
 	public session;
-  public user;
   public url;
 	options: option[] = [
     	{value: 'perfil-0', viewValue: 'Perfil'},
       {value: 'datos-1', viewValue: 'Modificar datos'},
+      {value: 'admin', viewValue: 'Administración'},
       {value: 'logout-2', viewValue: 'Cerrar sesión'}
 	];
 

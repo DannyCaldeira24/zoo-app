@@ -5,6 +5,10 @@ import { HttpModule } from '@angular/http';
 //Rutas
 import { routing, appRoutingProviders} from './app.routing';
 
+//Modulos
+import {AdminModule} from './admin/admin.module';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZooNavComponent } from './zoo-nav/zoo-nav.component';
@@ -21,6 +25,8 @@ import { RegisterComponent } from './register/register.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
+import { AnimalsComponent } from './animals/animals.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     RegisterComponent,
     RecoveryComponent,
     UserEditComponent,
-    PerfilComponent
+    PerfilComponent,
+    AnimalDetailComponent,
+    AnimalsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +57,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    AdminModule,
     routing
   ],
   providers: [

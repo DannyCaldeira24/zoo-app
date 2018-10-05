@@ -1,0 +1,22 @@
+<div class="row">
+	<div *ngFor="let animal of animals" class="col-lg-4">
+		<mat-card class="example-card">
+		  <mat-card-header>
+		    <div mat-card-avatar class="example-header-image"><img style="border-radius: 50%;height: 50px;width: 50px;" src="{{url+'/get-image-animal/'+animal.image}}" alt=""></div>
+		    <mat-card-title>&nbsp;&nbsp;&nbsp;<strong>Nombre del animal:</strong> {{animal.name}}</mat-card-title>
+		    <mat-card-subtitle>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Año de nacimiento:</strong> {{animal.year}}</mat-card-subtitle>
+		  </mat-card-header>
+		  <img mat-card-image style="max-height:350px;" src="{{url+'/get-image-animal/'+animal.image}}" alt="Foto {{animal.name}}">
+		  <mat-card-content>
+		  	<h4>Descripción:</h4>
+		    <p>
+				{{animal.description}}
+		    </p>
+		  </mat-card-content>
+		  <mat-card-actions>
+		  </mat-card-actions>
+		</mat-card>
+		<br>
+	</div>
+</div>
+

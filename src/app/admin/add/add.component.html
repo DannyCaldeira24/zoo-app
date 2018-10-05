@@ -1,0 +1,82 @@
+<div class="col-lg-10 offset-lg-1 content-box-blue">	
+	<h3 style="margin-bottom:20px;">{{title}}</h3>
+	<div class="alert alert-success" *ngIf="status=='success'">
+		El animal se ha añadido correctamente
+	</div>
+	<div class="alert alert-danger" *ngIf="status=='error'">
+		Hubo un problema al momento de añadir el animal intente nuevamente
+	</div>
+	<form #addForm="ngForm" (ngSubmit)="addForm.form.valid && onSubmit(addForm)">
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		    <mat-label>Nombre</mat-label>
+		    <input matInput name="name" #name="ngModel" [(ngModel)]="animal.name" placeholder="Ingrese el nombre del animal" required minlength="3"/>
+		    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+		    <mat-hint>Este campo es requerido</mat-hint>
+		    <mat-error *ngIf="name.invalid">
+			    <mat-error *ngIf="name.errors.required">
+			      El nombre no puede quedar vacio
+			    </mat-error>
+			    <mat-error *ngIf="name.errors.minlength">
+			      El nombre debe tener al menos 3 caracteres
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		    <mat-label>Description</mat-label>
+		    <textarea matInput name="description" #description = "ngModel" [(ngModel)]="animal.description" placeholder="Descripción del animal" required minlength="10"></textarea>
+		    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+		    <mat-hint>Este campo es requerido</mat-hint>
+		    <mat-error *ngIf="description.invalid">
+			    <mat-error *ngIf="description.errors.required">
+			      El animal debe tener alguna descripción
+			    </mat-error>
+			    <mat-error *ngIf="description.errors.minlength">
+			      La descripción debe tener al menos 10 caracteres
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div class="col-lg-12">
+		  <mat-form-field appearance="outline">
+		    <mat-label>Año</mat-label>
+		    <input matInput name="year" #year="ngModel" [(ngModel)]="animal.year" placeholder="Año de nacimiento del animal" required type="number"/>
+		    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+		    <mat-hint>Este campo es requerido</mat-hint>
+		    <mat-error *ngIf="year.invalid">
+			    <mat-error *ngIf="year.errors.required">
+			      El animal debe tener una año de nacimiento
+			    </mat-error>
+		    </mat-error>
+		  </mat-form-field>
+		</div>
+		<div style="margin-bottom:15px;margin-top:15px;" class="col-lg-10 offset-lg-1">
+			<small>Si desea también puede actualizar la imagen del animal</small>
+			<div class="row">
+				<div class="custom-file col-lg-6" id="customFile" lang="es">
+			        <input type="file" class="custom-file-input" id="imageAnimal" aria-describedby="fileHelp" (change)="fileChangeEvent($event)">
+			        <label class="custom-file-label" for="imageAnimal">
+			           <span *ngIf="filesToUpload">
+			           	{{filesToUpload.name}}	
+			           </span>
+			           <span *ngIf="animal.image && !filesToUpload">
+			           	{{animal.image}}	
+			           </span>
+			           <span *ngIf="!animal.image && !filesToUpload">
+			           	Eliga una imagen de su equipo	
+			           </span>
+			        </label>
+				</div>
+				<div style="margin-bottom:15px;text-align: center" class="col-lg-6">
+					<img style="border-radius: 50%;height: 130px;width: 130px;" src="{{url+'/get-image-animal/'+animal.image}}" alt="">
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-12" style="text-align:center">
+			<input type="submit" value="Añadir" class="btn btn-success" [disabled]="!addForm.form.valid">&nbsp;&nbsp;
+			<a><button mat-raised-button color="warn">Cancelar</button></a>	
+		</div>
+	</form>
+</div>	

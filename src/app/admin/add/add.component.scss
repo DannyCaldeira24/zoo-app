@@ -1,0 +1,15 @@
+mat-form-field{
+	width:100%;
+}
+
+.content-box-blue {
+	z-index: 1;
+	padding:30px;
+	background-color: rgba(107, 255, 227,.1);
+	// border: 1px solid #afcde3;
+	box-shadow: 5px 10px 8px #888888;
+}
+
+.content-box-blue div mat-form-field{
+	margin-bottom:15px;
+}
