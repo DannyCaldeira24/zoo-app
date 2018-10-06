@@ -28,6 +28,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { KeepersComponent } from './keepers/keepers.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { KeepersComponent } from './keepers/keepers.component';
     PerfilComponent,
     AnimalDetailComponent,
     AnimalsComponent,
-    KeepersComponent
+    KeepersComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
