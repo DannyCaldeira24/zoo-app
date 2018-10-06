@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import { AnimalsComponent } from './animals/animals.component';
+import { KeepersComponent } from './keepers/keepers.component';
+
 
 const appRoutes: Routes = [
 	 {path:'', component:HomeComponent},
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
 	 {path: 'edit', component: UserEditComponent},
 	 {path: 'perfil', component: PerfilComponent},
 	 {path: 'get-animal/:id', component: AnimalDetailComponent},
-	 {path: 'animals', component: AnimalsComponent}
+	 {path: 'keepers', component: KeepersComponent},
+	 {path: 'animals', component: AnimalsComponent},
 	 {path: '**', component:HomeComponent}
 ];
 

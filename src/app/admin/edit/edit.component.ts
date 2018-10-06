@@ -15,7 +15,7 @@ import {UploadService} from '../../services/upload.service';
 })
 export class EditComponent implements OnInit {
 
-	public title = 'Añadir animal';
+	public title = 'Editar animal';
 	public animal: Animal;
 	public session;
 	public token;

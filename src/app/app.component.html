@@ -1,8 +1,43 @@
 <app-zoo-nav>
-	<section style="margin-top:50px" id="main" class="col-md-12">
+	<section style="margin-top:50px; margin-bottom: 50px" id="main" class="col-md-12">
 	  <router-outlet></router-outlet>
 	</section>
-	<footer id="footer" style="margin-top:50px;padding:30px;text-align:center" class="border-top col-md-12">
-	  <p>Mi primera app con Angular</p>
-	</footer>
+  <footer class="site-footer">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text">
+              © ZOO-APP
+            </p>
+            <div class="credits">
+              <a href="https://bootstrapmade.com/">Main Stack</a> by Danny Caldeira
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                    <a [routerLink]="['/home']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">home</mat-icon>&nbsp;Inicio</a>
+              </li>
+
+              <li class="list-inline-item">
+                    <a [routerLink]="['/animals']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">room</mat-icon>&nbsp;Animales</a>
+              </li>
+
+              <li class="list-inline-item">
+                    <a [routerLink]="['/keepers']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">security</mat-icon>&nbsp;Cuidadores</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a class="nav-item"><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon>&nbsp;Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
 </app-zoo-nav>

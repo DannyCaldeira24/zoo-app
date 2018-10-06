@@ -1,0 +1,149 @@
+.site-footer {
+  background-color: #111;
+  padding: 0;
+}
+
+.site-footer h2, .site-footer p {
+  color: #fff;
+}
+
+.site-footer p {
+  opacity: .75;
+  line-height: 2.0925;
+}
+
+.site-footer h2,
+.site-footer .btn {
+  margin-bottom: 25px;
+}
+
+.site-footer .social-nav a {
+  color: #fff;
+  opacity: .25;
+}
+
+.site-footer .social-nav a:hover {
+  opacity: 1;
+}
+
+.site-footer .bottom {
+  background-color: #000;
+  padding: 20px 0;
+}
+
+.site-footer .bottom .list-inline, .site-footer .bottom p {
+  margin: 0;
+}
+
+.site-footer .bottom .list-inline {
+  position: relative;
+  top: 5px;
+}
+
+.site-footer .bottom .list-inline a {
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin-right: 15px;
+}
+
+.site-footer .bottom .list-inline a:hover {
+  color: #ef09d3;
+}
+
+.site-footer .credits {
+  color: #ddd;
+}
+
+.site-footer .credits a {
+  color: rgba(209, 12, 185,.5);
+}
+
+a {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+/* ==================================================
+  Responsive Styling
+  ================================================== */
+@media (max-width: 61.9em) {
+  section,
+  .block,
+  .cta {
+    padding: 35px 0;
+  }
+  .features {
+    padding-bottom: 5px;
+  }
+  p,
+  .block p {
+    margin: 0;
+  }
+  .hero-brand {
+    margin-bottom: 35px;
+  }
+  .tagline {
+    margin: 35px 0;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+  h2,
+  .tagline {
+    font-size: 24px;
+  }
+  h2 {
+    margin-bottom: 25px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  .hero {
+    padding: 75px 0;
+  }
+  .stats-col {
+    margin-bottom: 25px;
+  }
+  .block {
+    height: auto;
+  }
+  .feature-col {
+    padding-bottom: 30px;
+  }
+  .portfolio-grid .card h3.card-title {
+    font-size: 18px !important;
+  }
+  .portfolio-grid .card .card-text {
+    font-size: 13px;
+  }
+  .team .team-over {
+    padding-top: 20px;
+  }
+  .team .card .social-nav {
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  .site-footer .social-nav {
+    margin-bottom: 35px;
+  }
+  .site-footer .list-inline {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .site-footer .list-inline li {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .block {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
