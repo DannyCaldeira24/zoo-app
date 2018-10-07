@@ -24,6 +24,7 @@ export class ListComponent implements OnInit {
 	public modalFooter;
 	public token;
 	public _id;
+	public busqueda;
 
 	constructor(
 		private _route:ActivatedRoute,

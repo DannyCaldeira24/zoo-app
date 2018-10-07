@@ -30,11 +30,13 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img style="width:100%;height:550px;" class="d-block w-100" src="../../assets/img/contacto.jpg" alt="Third slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Contacto</h5>
-        <p>Puedes contactarnos a traves de nuestro correo institucional o redes sociales</p>
-      </div>
+      <a [routerLink]="['/contact']">
+        <img style="width:100%;height:550px;" class="d-block w-100" src="../../assets/img/contacto.jpg" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Contacto</h5>
+          <p>Puedes contactarnos a traves de nuestro correo institucional o redes sociales</p>
+        </div>
+      </a>  
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { AdminRoutingModule} from './admin-routing.module';
-//Rutas
+
+//Components
 import { MainComponent } from './main/main.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
@@ -15,17 +16,19 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 
-//Guards
+//Servicios
 import {UserService} from '../services/user.service';
 import {AnimalService} from '../services/animal.service';
 import {AdminGuard} from '../services/admin.guard';
+import {SearchPipe} from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
     MainComponent,
     ListComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
