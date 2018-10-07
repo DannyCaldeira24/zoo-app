@@ -29,6 +29,7 @@ import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { KeepersComponent } from './keepers/keepers.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ContactComponent } from './contact/contact.component';
     AnimalDetailComponent,
     AnimalsComponent,
     KeepersComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
