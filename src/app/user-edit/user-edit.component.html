@@ -62,18 +62,22 @@
 			        <input type="file" class="custom-file-input" id="imageUser" aria-describedby="fileHelp" (change)="fileChangeEvent($event)">
 			        <label class="custom-file-label" for="imageUser">
 			           <span *ngIf="filesToUpload">
-			           	{{filesToUpload.name}}	
+			           	{{filesToUpload[0].name}}	
 			           </span>
 			           <span *ngIf="user.image && !filesToUpload">
 			           	{{user.image}}	
 			           </span>
-			           <span *ngIf="!user.image && !filesToUpload">
-			           	Eliga una imagen de su equipo	
-			           </span>
 			        </label>
 				</div>
 				<div style="margin-bottom:15px;text-align: center" class="col-lg-6">
-					<img style="border-radius: 50%;height: 130px;width: 130px;" src="{{url+'/get-image/'+user.image}}" alt="">
+					<div *ngIf="!urlpreview">
+						<img style="border-radius: 50%;height: 130px;width: 130px;" src="{{url+'/get-image/'+user.image}}" alt=""><br>
+						<p>Imagen actual</p>
+					</div>
+					<div *ngIf="urlpreview">
+						<img style="border-radius: 50%;height: 130px;width: 130px;" [src]="urlpreview"><br>
+						<p>Preview</p>
+					</div>	
 				</div>
 			</div>
 		</div>

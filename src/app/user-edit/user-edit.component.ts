@@ -21,6 +21,7 @@ export class UserEditComponent implements OnInit {
 	public hide;
 	public token;
 	public url;
+	public urlpreview;
 	public filesToUpload: Array<File>;
 
 	constructor(
@@ -68,7 +69,17 @@ export class UserEditComponent implements OnInit {
 		);
 	}
 	fileChangeEvent(fileInput:any){
-		this.filesToUpload = <Array<File>>fileInput.target.files;
-		console.log(this.filesToUpload);
+		if (fileInput.target.files && fileInput.target.files[0]) {
+			this.filesToUpload = <Array<File>>fileInput.target.files;
+		    var reader = new FileReader();
+
+		    reader.onload = (event: ProgressEvent) => {
+		      this.urlpreview = (<FileReader>event.target).result;
+		    }
+
+		    reader.readAsDataURL(fileInput.target.files[0]);
+		}
+		
+		console.log(this.filesToUpload[0].name);
 	}
 }

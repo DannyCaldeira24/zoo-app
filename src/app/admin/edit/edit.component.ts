@@ -22,6 +22,7 @@ export class EditComponent implements OnInit {
 	public status;
 	public url:string;
 	public filesToUpload: Array<File>;
+	public urlpreview;
 
 	constructor(
 		private _route: ActivatedRoute,
@@ -85,7 +86,17 @@ export class EditComponent implements OnInit {
 		});
 	}
 	fileChangeEvent(fileInput:any){
-		this.filesToUpload = <Array<File>>fileInput.target.files;
+		if (fileInput.target.files && fileInput.target.files[0]) {
+			this.filesToUpload = <Array<File>>fileInput.target.files;
+		    var reader = new FileReader();
+
+		    reader.onload = (event: ProgressEvent) => {
+		      this.urlpreview = (<FileReader>event.target).result;
+		    }
+
+		    reader.readAsDataURL(fileInput.target.files[0]);
+		}
+		
 		console.log(this.filesToUpload);
 	}
 
