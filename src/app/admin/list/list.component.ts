@@ -6,6 +6,7 @@ import {Animal} from '../../models/animal';
 import {AnimalService} from '../../services/animal.service';
 import {UserService} from '../../services/user.service';
 import {UploadService} from '../../services/upload.service';
+import * as $ from 'jquery';// import Jquery here
 
 
 @Component({
