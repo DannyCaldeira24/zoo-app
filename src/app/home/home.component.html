@@ -4,14 +4,14 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <!-- <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> -->
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img style="max-height: calc(100vh - 64px);" class="d-block w-100" src="../../assets/img/Zoologico.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
           <h5>Bienvenidos a Zoo-app</h5>
-          <p>Tu mejor zoologico digital</p>
+          <p>El zoologico digital #1 en Venezuela</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -24,13 +24,15 @@
         </a>
       </div>
       <div class="carousel-item">
-        <img style="max-height: calc(100vh - 64px);" class="d-block w-100" src="../../assets/img/shop.jpg" alt="Third slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Tienda</h5>
-          <p>Visitanos, ver es gratis</p>
-        </div>
+        <a [routerLink]="['/keepers']">
+          <img style="max-height: calc(100vh - 64px);" class="d-block w-100" src="../../assets/img/helper.jpg" alt="Third slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Cuidadores</h5>
+            <p>Conozca a nuestro personal</p>
+          </div>
+        </a>
       </div>
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <a [routerLink]="['/contact']">
           <img style="max-height: calc(100vh - 64px);" class="d-block w-100" src="../../assets/img/contacto.jpg" alt="Third slide">
           <div class="carousel-caption d-none d-md-block">
@@ -38,7 +40,7 @@
             <p>Puedes contactarnos a traves de nuestro correo institucional o redes sociales</p>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

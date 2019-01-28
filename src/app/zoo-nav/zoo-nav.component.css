@@ -49,13 +49,14 @@ mat-toolbar a{
 }
 
 .nav-item:hover{
-  background:rgba(226, 66, 244,.4);
+  /* background:rgba(226, 66, 244,.4); */
   color:white;
-  -webkit-transform: scale(0.9);
+  /* -webkit-transform: scale(0.9);
   -ms-transform: scale(0.9);
-  transform: scale(0.9);
-  padding:7px;
-  box-shadow: inset 1px 1px 1px 2px #555953;
+  transform: scale(0.9); */
+	/* padding:7px; */
+	border-bottom:2px solid yellow;
+  /* box-shadow: inset 1px 1px 1px 2px #555953; */
 }
 
 .activado{

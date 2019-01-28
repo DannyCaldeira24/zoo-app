@@ -1,5 +1,5 @@
 <!-- [ngClass]="{hidden: !(isHandset | async)!.matches}" -->
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container id="up" class="sidenav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
@@ -12,7 +12,7 @@
       <a mat-list-item><mat-icon aria-label="Side nav toggle icon">room</mat-icon> Animales</a>
       <a mat-list-item><mat-icon aria-label="Side nav toggle icon">security</mat-icon> Cuidadores</a>
       <a mat-list-item><mat-icon aria-label="Side nav toggle icon">shop</mat-icon> Tienda</a>
-      <a mat-list-item><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon> Contacto</a>
+      <!-- <a mat-list-item><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon> Contacto</a> -->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -29,7 +29,7 @@
       <a [routerLink]="['/home']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">home</mat-icon>&nbsp;Inicio</a>
       <a [routerLink]="['/animals']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">room</mat-icon>&nbsp;Animales</a>
       <a [routerLink]="['/keepers']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">security</mat-icon>&nbsp;Cuidadores</a>
-      <a class="nav-item" [routerLink]="['/contact']" [routerLinkActive]="['activado']"><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon>&nbsp;Contacto</a>
+      <!-- <a class="nav-item" [routerLink]="['/contact']" [routerLinkActive]="['activado']"><mat-icon aria-label="Side nav toggle icon">contact_support</mat-icon>&nbsp;Contacto</a> -->
       <span class="spacer"></span>
       <a *ngIf="!session" [routerLink]="['/login']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>&nbsp;Login</a>
       <a *ngIf="!session" [routerLink]="['/register']" [routerLinkActive]="['activado']" class="nav-item"><mat-icon aria-label="Side nav toggle icon">how_to_reg</mat-icon>&nbsp;Register</a>

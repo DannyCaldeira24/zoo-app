@@ -7,3 +7,23 @@ body,html{ height:100%; margin:0;}
 	margin-bottom:60px;
 }
 
+.pointer {cursor: pointer !important;}
+.scrolltop {
+  
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(244, 65, 65,.7);
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+}
+
+.scrolltop:hover, .scrolltop:active, .scrolltop:focus {
+  color: #fff !important;
+  opacity: .75;
+}
+

@@ -9,9 +9,9 @@
 			</div>
 			<div *ngIf='busqueda' class="col-lg-12">
 				<small>Busqueda: <strong>{{busqueda}}</strong></small>
-			</div>	
+			</div>
 		</div>
-	
+
 		<div class="col-lg-1">Buscar</div>
 		<div class="col-lg-5">
 			<input style="width: 100%" type="text" [(ngModel)]="busqueda">
@@ -20,49 +20,50 @@
 	<br>
 	<table class="table">
 		<thead class="thead-dark">
-		  <tr>
-		    <th>Nombre</th>
-		    <th>Descripcion</th>
-		    <th>Año</th>
-		    <th>Acciones</th>
-		  </tr>
+			<tr>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Año</th>
+				<th>Acciones</th>
+			</tr>
 		</thead>
 		<tbody>
-		  <tr *ngFor="let animal of animals | search:busqueda">
-		    <td>{{animal.name}}</td>
-		    <td>{{animal.description}}</td>
-		    <td>{{animal.year}}</td>
-		    <td>
-				<a [routerLink]="['/get-animal',animal._id]" style="margin-right:15px;" type="button" class="btn btn-info">Ver</a>
-				<a [routerLink]="['/admin-panel/editar',animal._id]" style="margin-right:15px;" type="button" class="btn btn-success">Editar</a>
-				<!-- Button trigger modal -->
-				<a style="color:white" (click)="parche(animal)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-				  Borrar
-				</a>
-					
-				<!-- Modal -->
-				<div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div class="modal-body">
-				      	<p class="text-danger">{{modalBodydanger}}</p>
-				        <p class="text-warning">{{modalBodywarning}}</p>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				        <a style="color:white" (click)="deleteAnimal()" type="button" class="btn btn-danger">Confirmar</a>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-		    </td>
-		  </tr>
+			<tr *ngFor="let animal of animals | search:busqueda">
+				<td>{{animal.name}}</td>
+				<td>{{animal.description}}</td>
+				<td>{{animal.year}}</td>
+				<td>
+					<a [routerLink]="['/get-animal',animal._id]" style="margin-right:15px;" type="button" class="btn btn-info">Ver</a>
+					<a [routerLink]="['/admin-panel/editar',animal._id]" style="margin-right:15px;" type="button" class="btn btn-success">Editar</a>
+					<!-- Button trigger modal -->
+					<a style="color:white" (click)="parche(animal)" type="button" class="btn btn-danger" data-toggle="modal"
+					 data-target="#myModal">
+						Borrar
+					</a>
+
+					<!-- Modal -->
+					<!-- <div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p class="text-danger">{{modalBodydanger}}</p>
+									<p class="text-warning">{{modalBodywarning}}</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+									<a style="color:white" (click)="deleteAnimal()" type="button" class="btn btn-danger">Confirmar</a>
+								</div>
+							</div>
+						</div>
+					</div> -->
+				</td>
+			</tr>
 		</tbody>
 	</table>
 	<p *ngIf="!animals">message</p>

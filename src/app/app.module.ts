@@ -31,6 +31,8 @@ import { KeepersComponent } from './keepers/keepers.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +64,7 @@ import { FooterComponent } from './footer/footer.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    ScrollToModule.forRoot(),
     HttpModule,
     AdminModule,
     routing

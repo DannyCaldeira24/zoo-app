@@ -1,4 +1,4 @@
-<div class="col-lg-10 offset-lg-1 content-box-blue">	
+<div class="col-lg-10 offset-lg-1">	
 	<h3 style="margin-bottom:20px;">{{title}}</h3>
 	<div class="alert alert-success" *ngIf="status=='success'">
 		El animal se ha modificado correctamente
@@ -83,7 +83,7 @@
 		</div>	
 		<div class="col-lg-12" style="text-align:center">
 			<input type="submit" value="Editar" class="btn btn-success" [disabled]="!addForm.form.valid">&nbsp;&nbsp;
-			<a><button mat-raised-button color="warn">Cancelar</button></a>	
+			<a><button class="btn btn-danger">Cancelar</button></a>	
 		</div>
 	</form>
 </div>	
