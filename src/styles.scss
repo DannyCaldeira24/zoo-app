@@ -30,3 +30,11 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
 #wrap-main{
   min-height: calc(100vh - 64px);
 }
+
+div mat-form-field{
+	margin-bottom: 15px;
+}
+
+mat-card{
+  margin-top:35px;
+}

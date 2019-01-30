@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import {NgForm} from '@angular/forms';
 import {User} from '../models/user';
-import {GLOBAL} from '../services/global';
+import Swal from 'sweetalert2';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -35,8 +34,15 @@ export class RegisterComponent implements OnInit {
 	}
 
 	onSubmit(registerForm:NgForm){
+		Swal({
+			showCancelButton: false,
+			showConfirmButton: false,
+			html: '<div class = "animated fadeIn fa-child-ss"><i class="fas fa-spinner fa-spin fa-2x"></i></div>',
+			allowOutsideClick: false
+		  });
 		this._userService.register(this.user).subscribe(
 			response => {
+				Swal.close();
 				if(response.user && response.user._id){
 					// this.user = response.user;
 					this.success = true;

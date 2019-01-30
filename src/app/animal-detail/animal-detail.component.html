@@ -5,7 +5,7 @@
 	    <mat-card-title>&nbsp;&nbsp;&nbsp;<strong>Nombre del animal:</strong> {{animal.name}}</mat-card-title>
 	    <mat-card-subtitle>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Año de nacimiento:</strong> {{animal.year}}</mat-card-subtitle>
 	  </mat-card-header>
-	  <img mat-card-image src="{{url+'/get-image-animal/'+animal.image}}" alt="Photo of a Shiba Inu">
+	  <img mat-card-image style="height:350px;" src="{{url+'/get-image-animal/'+animal.image}}" alt="Photo of a Shiba Inu">
 	  <mat-card-content>
 	  	<h4>Descripción:</h4>
 	    <p>
@@ -13,8 +13,10 @@
 	    </p>
 	  </mat-card-content>
 	  <mat-card-actions>
-	    <button mat-button>Editar</button>
-	    <button mat-button>Eliminar</button>
+			<a [routerLink]="['/admin-panel/editar',animal._id]" style="margin-right:15px;" type="button" class="btn btn-success">Editar</a>
+			<a style="color:white" (click)="parche(animal)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+			 Borrar
+		 	</a>
 	  </mat-card-actions>
 	</mat-card>
 </div>

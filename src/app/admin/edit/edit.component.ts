@@ -6,6 +6,7 @@ import {Animal} from '../../models/animal';
 import {AnimalService} from '../../services/animal.service';
 import {UserService} from '../../services/user.service';
 import {UploadService} from '../../services/upload.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit',
@@ -42,9 +43,15 @@ export class EditComponent implements OnInit {
 	}
 
 	onSubmit(){
-		console.log(this.animal);
+		swal({
+			showCancelButton: false,
+			showConfirmButton: false,
+			html: '<div class = "animated fadeIn fa-child-ss"><i class="fas fa-spinner fa-spin fa-2x"></i></div>',
+			allowOutsideClick: false
+		  });
 		this._animalService.editAnimal(this.token, this.animal._id, this.animal).subscribe(
 			response =>{
+				swal.close();
 				if(!response.animal){
 					this.status = 'error';
 				}else{

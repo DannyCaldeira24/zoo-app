@@ -4,6 +4,7 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {ErrorStateMatcher} from '@angular/material/core';
 import {User} from '../models/user';
 import {GLOBAL} from '../services/global';
+import Swal from 'sweetalert2';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -39,6 +40,12 @@ export class LoginComponent implements OnInit {
 
 	onSubmit(loginForm:NgForm){
 		//Loguear el usuario y conseguir el objeto
+		Swal({
+			showCancelButton: false,
+			showConfirmButton: false,
+			html: '<div class = "animated fadeIn fa-child-ss"><i class="fas fa-spinner fa-spin fa-2x"></i></div>',
+			allowOutsideClick: false
+		  });
 		this._userService.signup(this.user).subscribe(
 			response=>{
 				if(response.user && response.user._id){
@@ -55,6 +62,7 @@ export class LoginComponent implements OnInit {
 								this.token = response.token;
 								localStorage.setItem('token',JSON.stringify(this.token));
 								//console.log(this.token);
+								Swal.close();
 								this._router.navigate(['/home']);
 							}
 						},
@@ -64,8 +72,9 @@ export class LoginComponent implements OnInit {
 					);
 
 				}else{
+					Swal.close();
 					this.message = response.message;
-					console.log(this.message);
+					// console.log(this.message);
 					this.error = true;
 				}
 			},

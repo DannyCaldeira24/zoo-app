@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {Router, ActivatedRoute} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 import {GLOBAL} from '../../services/global';
 import {Animal} from '../../models/animal';
 import {AnimalService} from '../../services/animal.service';
 import {UserService} from '../../services/user.service';
 import {UploadService} from '../../services/upload.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add',
@@ -41,8 +42,15 @@ export class AddComponent implements OnInit {
 
 	onSubmit(addForm:NgForm){
 		console.log(this.animal);
+		Swal({
+			showCancelButton: false,
+			showConfirmButton: false,
+			html: '<div class = "animated fadeIn fa-child-ss"><i class="fas fa-spinner fa-spin fa-2x"></i></div>',
+			allowOutsideClick: false
+		  });
 		this._animalService.addAnimal(this.token, this.animal).subscribe(
 			response =>{
+				Swal.close();
 				if(!response.animal){
 					this.status = 'error';
 				}else{
